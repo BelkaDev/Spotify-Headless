@@ -1,0 +1,15 @@
+{
+  "name": "Spotify-token-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^0.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://github.com/BelkaDev",
+  "license": "ISC"
+}
