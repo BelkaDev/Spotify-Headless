@@ -1,5 +1,5 @@
 ## Spotify-JWT
- A [puppeteer](https://github.com/puppeteer/puppeteer) approach to intercept Spotify OAuth token (alongside of fingerprints) then reinject it to reproduce a secured, browser-like traffic/behaviour.
+ A [puppeteer](https://github.com/puppeteer/puppeteer) approach to intercept Spotify OAuth token (alongside of fingerprints) then reinject it to reproduce a secure, browser-like traffic.
 #### How it works
 1. Establish a secure session by authenticating to Spotify within a **headless** browser. (Chromium)
 1. Generate a valid Json Web Token and store it until expiration.
