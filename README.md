@@ -3,9 +3,8 @@
 #### How it works
 1. Establish a secure session by authenticating to Spotify within a *headless* browser. (Chromium)
 1. Generate a valid Json Web Token and abuse it until expiration.
-1. The token will grant special actions throughout its lifespan, once expired, the whole process is started over.
+1. The access token allows you to make requests to the Spotify Web API on behalf of a user (throughout its lifespan), once expired, the whole process is started over.
 
-This can be used to create a Custom API from Spotify, and extensively any website backend <br>
 #### Installation and configuration
 ```bash
 git clone https://github.com/BelkaDev/Spotify-JWT ~/Spotify-JWT
