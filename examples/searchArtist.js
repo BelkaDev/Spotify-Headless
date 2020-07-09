@@ -12,9 +12,18 @@ return session.accessToken;
 }
 
 async function main() {
+const query = process.argv.slice(2).join('%20');
+if (query.length == 0) {
+	console.log('Enter an artist to search');
+	return
+}
 const session = new tokenValidator();
 const token = await getToken(session);
-await session.sendRequest('/v1/me/')
+result = await session.sendRequest('/v1/search?q='+query+'&type=artist');
+
+result.artists.items.forEach(artist => { 
+  console.log(artist.name); 
+}); 
 }
 
 main()
