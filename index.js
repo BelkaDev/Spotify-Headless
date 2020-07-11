@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const tokenValidator = require('./lib/tokenValidator')
 main().then((JWT) => { console.log('ACCESS_TOKEN:'+JWT) });
 async function main() {

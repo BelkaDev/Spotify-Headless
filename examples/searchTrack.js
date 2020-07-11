@@ -14,15 +14,15 @@ return session.accessToken;
 async function main() {
 const query = process.argv.slice(2).join('%20');
 if (query.length == 0) {
-	console.log('Enter an artist to search');
+	console.log('Enter a track to search');
 	return
 }
 const session = new tokenValidator();
 const token = await getToken(session);
-result = await session.sendRequest('/v1/search?q='+query+'&type=artist');
+result = await session.sendRequest('/v1/search?q='+query+'&type=track&limit=50');
 
-result.artists.items.forEach(artist => { 
-  console.log(artist.name); 
+result.tracks.items.forEach(track => { 
+  console.log(track.artists[0].name+' - '+track.name+' ('+ track.album.name + ')'+' | '+track.uri+''); 
 }); 
 }
 

@@ -12,15 +12,18 @@ return session.accessToken;
 }
 
 async function main() {
-const duration = process.argv.slice(2).join(' ');
-if (duration.length == 0 || isNaN(duration) ) {
-	console.log('Enter a valid duration.');
+const query = process.argv.slice(2).join('%20');
+if (query.length == 0) {
+	console.log('Enter an album to search');
 	return
 }
 const session = new tokenValidator();
 const token = await getToken(session);
-const player = new client(session);
-await player.sendAction('/connect-state/v1/player/command/from/22d6aea8bbb189ebd4616c8655a473ba4e513d85/to/140a29100980b698f8d97e74145c87be8d1bcd42')
+result = await session.sendRequest('/v1/search?q='+query+'&type=album');
+
+result.albums.items.forEach(album => { 
+  console.log(album.artists[0].name+' - '+album.name+' | {'+album.uri+'}'); 
+}); 
 }
 
 main()
