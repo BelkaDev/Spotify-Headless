@@ -43,7 +43,8 @@ request(options, callback.bind(this));
 
 async getStatus () {
 const session = new tokenValidator();
-const result = await session.sendRequest('/v1/me/player/')
+const result = await session.sendRequest('/v1/me/')
+console.log(result)
 this.currentDevice=result.device.id;
 this.isPlaying=result.is_playing;
 }

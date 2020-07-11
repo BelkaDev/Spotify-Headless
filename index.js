@@ -1,15 +1,11 @@
-const 
-  tokenValidator = require('./lib/tokenValidator')
-main()
+const tokenValidator = require('./lib/tokenValidator')
+main().then((JWT) => { console.log('ACCESS_TOKEN:'+JWT) });
 async function main() {
   const session = new tokenValidator();
   await session.checkTokenValidity();
-  if (session.isAlive) {
-  console.log('You have an ongoing valid session, skipping the logging process.');
-} else
-{
-  console.log('Previous token expired or not retrieved, generating a new one.')
-  await session.generate()
+  if (!session.isAlive) {
+  console.log('Previous token expired or not found, generating a new one.');
+  await session.generate();
 }
-console.log('\nACCESS_TOKEN:'+session.accessToken);
+return (session.accessToken);
 }

@@ -16,7 +16,7 @@ async function main() {
 const session = new tokenValidator();
 const token = await getToken(session);
 const player = new client(session);
-var x = await player.sendAction('/connect-state/v1/player/command/from/22d6aea8bbb189ebd4616c8655a473ba4e513d85/to/140a29100980b698f8d97e74145c87be8d1bcd42');
+await player.sendAction();
 }
 
 main()
