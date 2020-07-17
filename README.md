@@ -21,9 +21,12 @@ Manually grab your access token: <br>
 More examples including an API call can be found in the project.
 
 #### Usecase 
-###### Data scraping:
+##### Data scraping 
 
-###### Script automation
 
-##### todo:
-* add demo
+
+##### Script automation 
+##### exemple 1: create a local playlist, filter it, enqueue results:
+![exemple 1](src/automation1.png)
+##### exemple 2: set a timer, shuffle songs then transfer stream to phone:
+![exemple 2](src/automation2.png)
