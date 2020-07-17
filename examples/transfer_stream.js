@@ -17,8 +17,7 @@ async function main() {
     const token = await getToken(session);
     const player = new client(session);
     const device = process.argv.slice(2).join(' ');
-    if (device.length == 0) await player.play_pause();
-    else await player.transfer_stream_and_play(device);
+    await player.transfer_stream_and_play(device);
 }
 
 main()
