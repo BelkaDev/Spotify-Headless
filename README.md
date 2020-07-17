@@ -10,7 +10,7 @@
 git clone https://github.com/BelkaDev/Spotify-JWT ~/Spotify-JWT
 cd ~/Spotify-JWT && npm i
 ```
-To provide your credentials you need to set them as environement variables inside your .bashrc ( .zhshrc etc..), then refresh your shell. <br>
+To provide your credentials you need to set them as environement variables within your .bashrc (accordingly any shell config file) <br>
 ``` bash
 export SPOTIFY_USER=""
 export SPOTIFY_PWD=""
@@ -18,15 +18,17 @@ export SPOTIFY_PWD=""
 #### Running
 Manually grab your access token: <br>
 `node index.js` <br>
-More examples including an API call can be found in the project.
+More examples are included to showcase the extent of the application (searching, controlling playback, transfering streams..) </br>
+See below for practical uses.
 
-#### Usecase 
+#### Use case
 ##### Data scraping 
-
-
-
+![scraping](src/scraping.png)
 ##### Script automation 
-##### exemple 1: create a local playlist, filter it, enqueue results:
-![exemple 1](src/automation1.png)
-##### exemple 2: set a timer, shuffle songs then transfer stream to phone:
-![exemple 2](src/automation2.png)
+aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
+##### example 1: create a local playlist, filter it, feed stdout to queue:
+![example 1](src/automation1.png)
+##### example 2: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
+![example 2](src/automation2.png)
+
+
