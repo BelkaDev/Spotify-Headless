@@ -26,7 +26,7 @@ See below for practical uses.
 #### Use case
 ##### Data scraping 
 ![scraping](src/scraping.png)
-###### Script automation 
+##### Script automation 
 ###### aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
 ###### <u> example 1  </u>: create a local playlist, filter it, feed stdout to queue:
 ![example 1](src/automation1.png)
