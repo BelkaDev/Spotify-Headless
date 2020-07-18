@@ -1,9 +1,13 @@
 ## Spotify-JWT
- A [puppeteer](https://github.com/puppeteer/puppeteer) approach to intercept your validated Spotify OAuth token (alongside of the fingerprint) then reinject it to imitate a secure, browser-like traffic.
+ A [puppeteer](https://github.com/puppeteer/puppeteer) procedure to intercept your OAuth-validated Spotify JWT (alongside of the fingerprint) then reinject it to imitate a secure, User-like traffic.
 #### How it works
-1. Establish a secure session by authenticating to Spotify within a *headless* browser. (Chromium)
-1. Generate a valid Json Web Token and abuse it until expiration.
-1. The access token allows you to make requests to the Spotify Web API on behalf of a user (throughout its lifespan), once expired, the whole process is started over.
+1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)
+~~2. Generate a valid Json Web Token and abuse it until expiration.~~
+~~3. Restart operation.~~
+2. Export the session cookies, in particular one that serves as the refresh token that lasts for one year.
+3. The access token allows you to perform actions on behalf of a user throughout its lifespan, once expired it is recycled by the refresh token.
+4. In the event of reaching its expiration date, refresh token must be reproduced either manually or by starting this process all over <br>
+taking about 30s <i> every year </i>, and thus making it a viable solution.
 
 #### Installation and configuration
 ```bash
@@ -24,11 +28,11 @@ See below for practical uses.
 #### Use case
 ##### Data scraping 
 ![scraping](src/scraping.png)
-##### Script automation 
-aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
-##### example 1: create a local playlist, filter it, feed stdout to queue:
+###### Script automation 
+###### aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
+###### example 1: create a local playlist, filter it, feed stdout to queue:
 ![example 1](src/automation1.png)
-##### example 2: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
+###### example 2: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
 ![example 2](src/automation2.png)
 
 
