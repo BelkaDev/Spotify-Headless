@@ -1,16 +1,18 @@
 ## Spotify-JWT
- A [puppeteer](https://github.com/puppeteer/puppeteer) approach to intercept your validated Spotify OAuth token (alongside of the fingerprint) then reinject it to imitate a secure, browser-like traffic.
+ A [puppeteer](https://github.com/puppeteer/puppeteer) procedure to intercept your OAuth-validated Spotify JWT alongside of the session cookies, then reinject them to imitate an authorized, User-like traffic.
 #### How it works
-1. Establish a secure session by authenticating to Spotify within a *headless* browser. (Chromium)
-1. Generate a valid Json Web Token and abuse it until expiration.
-1. The access token allows you to make requests to the Spotify Web API on behalf of a user (throughout its lifespan), once expired, the whole process is started over.
+1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid Json Web Token and abuse it until expiration.</del> <br> <del>3. Restart these operations.</strike> <br>
+2. Export the session cookies, specifically one that serves as the refresh token which lasts for one year.
+3. The access token allows you to perform special actions on behalf of a user throughout its lifespan, once expired, it is refreshed by the refresh token.
+4. In the event of reaching its expiration date, refresh token must be generated either manually or by starting this process over.
+   It takes about 30s every year, consequently making this a viable solution.
 
 #### Installation and configuration
 ```bash
 git clone https://github.com/BelkaDev/Spotify-JWT ~/Spotify-JWT
 cd ~/Spotify-JWT && npm i
 ```
-To provide your credentials you need to set them as environement variables inside your .bashrc ( .zhshrc etc..), then refresh your shell. <br>
+To provide your credentials you need to set them as environement variables within your .bashrc (accordingly any shell config file) <br>
 ``` bash
 export SPOTIFY_USER=""
 export SPOTIFY_PWD=""
@@ -18,12 +20,17 @@ export SPOTIFY_PWD=""
 #### Running
 Manually grab your access token: <br>
 `node index.js` <br>
-More examples including an API call can be found in the project.
+More examples are included to showcase the extent of the application (searching, controlling playback, transfering streams..) </br>
+See below for practical uses.
 
-#### Usecase 
-###### Data scraping:
+#### Use case
+##### Data scraping 
+![scraping](src/scraping.png)
+###### Script automation 
+###### aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
+###### <u> example 1  </u>: create a local playlist, filter it, feed stdout to queue:
+![example 1](src/automation1.png)
+###### <u> example 2 </u>: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
+![example 2](src/automation2.png)
 
-###### Script automation
 
-##### todo:
-* add demo
