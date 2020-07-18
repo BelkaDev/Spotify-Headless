@@ -1,13 +1,11 @@
 ## Spotify-JWT
- A [puppeteer](https://github.com/puppeteer/puppeteer) procedure to intercept your OAuth-validated Spotify JWT (alongside of the fingerprint) then reinject it to imitate a secure, User-like traffic.
+ A [puppeteer](https://github.com/puppeteer/puppeteer) procedure to intercept your OAuth-validated Spotify JWT alongside of the session cookies, then reinject them to imitate a secure, User-like traffic.
 #### How it works
-   1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer) <br>
-<strike>2. Generate a valid Json Web Token and abuse it until expiration.</strike> <br>
-<strike>3. Restart operation.</strike> <br>
-   2. Export the session cookies, in particular one that serves as the refresh token that lasts for one year.
-   3. The access token allows you to perform actions on behalf of a user throughout its lifespan, once expired it is recycled by the refresh token.
-   4. In the event of reaching its expiration date, refresh token must be reproduced either manually or by starting this process all over <br>
-   taking about 30s <i> every year </i>, and thus making it a viable solution.
+1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid Json Web Token and abuse it until expiration.</del> <br> <del>3. Restart operation.</strike> <br>
+2. Export the session cookies, in particular one that serves as the refresh token which lasts for one year.
+3. The access token allows you to perform actions on behalf of a user throughout its lifespan, once expired, it is refreshed by the refresh token.
+4. In the event of reaching its expiration date, refresh token must be generated either manually or by starting this process over <br>
+   it takes about 30s every year, consequently making this a viable solution.
 
 #### Installation and configuration
 ```bash
