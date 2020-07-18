@@ -28,9 +28,9 @@ See below for practical uses.
 ![scraping](src/scraping.png)
 ###### Script automation 
 ###### aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
-###### example 1: create a local playlist, filter it, feed stdout to queue:
+###### <u> example 1  </u>: create a local playlist, filter it, feed stdout to queue:
 ![example 1](src/automation1.png)
-###### example 2: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
+###### <u> example 2 </u>: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
 ![example 2](src/automation2.png)
 
 
