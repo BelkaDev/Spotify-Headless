@@ -4,7 +4,7 @@
 1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid Json Web Token and abuse it until expiration.</del> <br> <del>3. Restart these operations.</strike> <br>
 2. Export the session cookies, specifically one that serves as the refresh token which lasts for one year.
 3. The access token allows you to perform special actions on behalf of a user throughout its lifespan, once expired, it is refreshed by the refresh token.
-4. In the event of reaching its expiration date, refresh token must be generated either manually or by starting this process over <br>
+4. In the event of reaching its expiration date, refresh token must be generated either manually or by starting this process over
    it takes about 30s every year, consequently making this a viable solution.
 
 #### Installation and configuration
