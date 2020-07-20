@@ -1,10 +1,6 @@
 #! /usr/bin/env node
 
 const tokenValidator = require('../lib/tokenValidator')
-const
-    BASE_URL = 'api.spotify.com',
-    USER_AGENT = "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0";
-
 main()
 async function getToken(session) {
     await session.checkTokenValidity();
@@ -17,8 +13,8 @@ async function main() {
     var type = process.argv.slice(1)[1];
     var query = process.argv.slice(3).join('%20');
     if ((!['album', 'artist', 'track', 'playlist', 'id'].includes(type))) {
-       type = 'track'
-       query=process.argv.slice(2).join('%20');
+        type = 'track'
+        query = process.argv.slice(2).join('%20');
     }
     if (query.length == 0) {
         console.log('Enter the ' + type + ' to search.');
@@ -37,7 +33,7 @@ async function main() {
         });
     } else if (type === 'track') {
         result.tracks.items.forEach((track, i) => {
-            console.log('['+track.album.name+'] '+ track.artists[0].name + ' - ' + track.name + ' | ' + track.uri);
+            console.log('[' + track.album.name + '] ' + track.artists[0].name + ' - ' + track.name + ' | ' + track.uri);
         });
     }
 }

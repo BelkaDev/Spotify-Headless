@@ -1,7 +1,7 @@
+#! /usr/bin/env node
+
 const tokenValidator = require('../lib/tokenValidator')
-const
-    BASE_URL = 'api.spotify.com',
-    USER_AGENT = "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0";
+main()
 
 async function getToken(session) {
     await session.checkTokenValidity();
@@ -20,7 +20,7 @@ async function main() {
     var found = false;
     if (!deviceType) {
         console.log(result);
-    } else if (deviceType.toUpperCase() === "COMPUTER") {
+    } else if (["PC", "COMPUTER"].includes(deviceType.toUpperCase())) {
         result.devices.forEach((device) => {
             if (!found && device.type === 'Computer') {
                 console.log(device.id);
@@ -45,5 +45,3 @@ async function main() {
     }
 
 }
-
-main()
