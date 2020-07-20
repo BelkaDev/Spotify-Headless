@@ -1,5 +1,5 @@
-## Spotify-JWT
- A [puppeteer](https://github.com/puppeteer/puppeteer) procedure to intercept your OAuth-validated Spotify JWT alongside of the session cookies, then reinject them to imitate an authorized, User-like traffic.
+## Spotify-Headless
+ Hacky way using [puppeteer](https://github.com/puppeteer/puppeteer) to intercept your OAuth-validated Spotify JWT alongside of the session cookies, then reinject them to imitate an authorized, User-like traffic.
 #### How it works
 1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid Json Web Token and abuse it until expiration.</del> <br> <del>3. Restart these operations.</strike> <br>
 2. Export the session cookies, specifically one that serves as the refresh token which lasts for one year.
@@ -19,7 +19,7 @@ export SPOTIFY_PWD=""
 ```
 #### Running
 Manually grab your access token: <br>
-`node index.js` <br>
+`node token.js` <br>
 More examples are included to showcase the extent of the application (searching, controlling playback, transfering streams..) </br>
 See below for practical uses.
 
