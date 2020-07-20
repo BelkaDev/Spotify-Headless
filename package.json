@@ -1,8 +1,8 @@
 {
-  "name": "Spotify-JWT",
+  "name": "Spotify-Headless",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "token.js",
   "dependencies": {
     "puppeteer": "^0.13.0"
   },
