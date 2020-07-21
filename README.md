@@ -1,11 +1,10 @@
-## Spotify-JWT
- A [puppeteer](https://github.com/puppeteer/puppeteer) procedure to intercept your OAuth-validated Spotify JWT alongside of the session cookies, then reinject them to imitate an authorized, User-like traffic.
+## Spotify-Headless
+CLI tool using [puppeteer](https://github.com/puppeteer/puppeteer) to intercept your OAuth-validated Spotify token (alongside of the session cookies), then reinject them to imitate an authorized, User-like traffic. It works as a wrapper around Spotify's web API.
 #### How it works
-1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid Json Web Token and abuse it until expiration.</del> <br> <del>3. Restart these operations.</strike> <br>
-2. Export the session cookies, specifically one that serves as the refresh token which lasts for one year.
-3. The access token allows you to perform special actions on behalf of a user throughout its lifespan, once expired, it is refreshed by the refresh token.
-4. In the event of reaching its expiration date, refresh token must be generated either manually or by starting this process over.
-   It takes about 30s every year, consequently making this a viable solution.
+1. Establish a secure session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid Json Web Token and use it until expiration.</del> <br> <del>3. Start over.</strike> <br>
+2. Export the session cookies and store them locally, specifically the refresh token that continually validate the access token throughout its lifespan.
+3. The access token allows you to perform special actions on behalf of a user, once expired, it's updated by the refresh token.
+4. The first two steps must be repeated once the refresh token expires. (after one year).
 
 #### Installation and configuration
 ```bash
@@ -19,7 +18,7 @@ export SPOTIFY_PWD=""
 ```
 #### Running
 Manually grab your access token: <br>
-`node index.js` <br>
+`node token.js` <br>
 More examples are included to showcase the extent of the application (searching, controlling playback, transfering streams..) </br>
 See below for practical uses.
 
