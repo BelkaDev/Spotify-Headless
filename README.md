@@ -18,17 +18,20 @@ export SPOTIFY_PWD=""
 ```
 #### Running
 Manually grab your access token: `node token.js` <br>
-More examples are included to showcase the extent of the application (searching, controlling playback, transfering streams..) </br>
-See below for practical uses.
+Other commands are found under `/lib` folder, they are simple and pretty straightforward on their own.
 
 #### Use case
-##### Data scraping 
-![scraping](src/scraping.png)
-##### Script automation 
-###### aka the sole puporse of the project, it offers an immense flexibility especially when combining aliases
-###### <u> example 1  </u>: create a local playlist, filter it, feed stdout to queue:
-![example 1](src/automation1.png)
-###### <u> example 2 </u>: set a timer, shuffle songs then transfer ongoing stream to your mobile device:
-![example 2](src/automation2.png)
+The sole purpose is to combine aliases into automated and complex tasks, this can offer a lot of flexibility as shown below:
+###### <u> example 1 (Basic):  </u>: Browse Spotify catalog, filter items, feed STDOUT to queue.
+![example 1](static/basic.png)
+###### <u> example 2 (Advanced) </u>: Store to a local playlist, shuffle songs, set a timer, transfer ongoing stream to your mobile device.
+![example 2](static/advanced.png)
+###### <u> example 3 (Expert):  </u>: Convert Youtube playlist to a Spotify playlist.
+![example 1](static/expert.png)
 
 
+#### Notes:
+`play.js` reads input from stdin only
+`transfer_stream.js` takes `phone/mobile`,`computer/pc`,`browser` as parameters, if the suggested device isn't opened, it sends the signal to the actual active device (in other words it does nothing)
+`search.js` will lookup for tracks by default, unlike other items (albums,playlists etc..), tracks can be stacked and enqueued at once, more details [here](https://developer.spotify.com/documentation/web-api/reference/player/start-a-users-playback/) </br>
+you can pass `album`,`artist`,`playlist` as the arguments.
