@@ -25,7 +25,7 @@ class tokenValidator {
    return new Promise((resolve, reject) => {
     https.get({
       host: BASE_URL,
-      path: apiCall,
+      path: encodeURI(apiCall),
       headers: {
         Accept: '*/*',
         'User-Agent': USER_AGENT,

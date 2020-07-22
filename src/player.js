@@ -1,5 +1,5 @@
 var request = require('request');
-const tokenValidator = require('../lib/tokenValidator')
+var tokenValidator = require('./tokenValidator');
 const
     BASE_URL = 'gew-spclient.spotify.com',
     USER_AGENT = "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0";
@@ -45,6 +45,31 @@ class player {
 
         request(options, callback.bind(this));
     }
+
+async play_pause() {
+        var headers = {
+            'Authorization': `Bearer ${this.auth}`,
+            'Content-Type': 'application/json'
+        };
+        var action='play'
+        await this.getStatus()
+        if (this.isPlaying) action='pause'
+        var options = {
+            url: 'https://api.spotify.com/v1/me/player/'+action,
+            method: 'PUT',
+            headers: headers,
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+            }
+        }
+
+        request(options, callback);
+
+    }
+
 
     async transfer_stream_and_play(target_device) {
         var headers = {
