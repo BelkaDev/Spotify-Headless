@@ -17,7 +17,7 @@ export SPOTIFY_PWD=""
 ```
 #### Running
 Manually grab your access token: `node token.js` <br>
-Other commands are found under `/lib` folder, they are example of commands from the API (search, play/resume etc..)
+Other commands are found under `/lib` folder, they are examples of commands from the API with extra features (search, play/resume etc..)
 
 #### Use case
 The sole purpose is to combine aliases into automated and complex tasks, this can offer a lot of flexibility as shown below:
