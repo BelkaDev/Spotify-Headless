@@ -30,7 +30,7 @@ The sole purpose is to combine aliases into automated and complex tasks, this ca
 
 
 #### Notes:
-* `play.js` reads input from stdin only
+* `play.js` reads input from stdin only, it works in pair with the search command.
 * `transfer.js` takes `phone/mobile`,`computer/pc`,`browser` as parameters, if the suggested device isn't opened, it sends the signal to the actual active device.
 * `search.js` will lookup for tracks by default, unlike other items (albums,playlists etc..), tracks can be stacked and enqueued at once, more details [here](https://developer.spotify.com/documentation/web-api/reference/player/start-a-users-playback/). It takes `album`,`artist`,`playlist` as arguments.
 * snippets used in the examples can be found [here](https://github.com/BelkaDev/dotfiles/blob/master/.zshrc)
