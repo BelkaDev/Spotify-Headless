@@ -35,3 +35,6 @@ The sole purpose is to combine aliases into automated and complex tasks, this ca
 * `search.js` will lookup for tracks by default, unlike other items (albums,playlists etc..), tracks can be stacked and enqueued at once, more details [here](https://developer.spotify.com/documentation/web-api/reference/player/start-a-users-playback/). It takes `album`,`artist`,`playlist` as arguments.
 * snippets used in the examples can be found [here](https://github.com/BelkaDev/dotfiles/blob/master/.zshrc)
  
+#### Todo:
+* Function to create User playlists on the plateform.
+* Catch random/annoying error messages.
