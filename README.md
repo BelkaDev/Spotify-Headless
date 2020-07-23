@@ -1,5 +1,5 @@
 ## Spotify-Headless
-CLI automation script using [puppeteer](https://github.com/puppeteer/puppeteer) to intercept your validated OAuth Spotify token (alongside of the session cookies), then reinject them to imitate an authorized, User-like traffic.
+A CLI tool using [puppeteer](https://github.com/puppeteer/puppeteer) to intercept your validated OAuth Spotify token (alongside of the session cookies), then reinject them to imitate an authorized, User-like traffic.
 #### How it works
 1. Establish a session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid JWT and use it until expiration.</del> <br> <del>3. Start over.</strike> <br>
 2. Export the session cookies and store them locally, specifically the refresh token that will refresh the JWT every time it expires. (valid for one year)
