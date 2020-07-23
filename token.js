@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const tokenValidator = require('../src/tokenValidator')
+const tokenValidator = require('./src/tokenValidator')
 main().then((JWT) => { console.log('ACCESS_TOKEN:'+JWT) });
 async function main() {
   const session = new tokenValidator();
