@@ -71,7 +71,7 @@ async play_pause() {
     }
 
 
-    async transfer_stream_and_play(target_device) {
+    async transfer_and_play(target_device) {
         var headers = {
             'Authorization': `Bearer ${this.auth}`,
             'Content-Type': 'application/json'
