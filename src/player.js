@@ -1,3 +1,4 @@
+// Note that 'request' is deprecated: https://github.com/request/request/issues/3142
 var request = require('request');
 var tokenValidator = require('./tokenValidator');
 const

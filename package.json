@@ -4,7 +4,8 @@
   "description": "",
   "main": "token.js",
   "dependencies": {
-    "puppeteer": "^0.13.0"
+    "puppeteer": "^0.13.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
