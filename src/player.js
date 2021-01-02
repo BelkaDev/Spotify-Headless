@@ -70,6 +70,94 @@ async play_pause() {
 
     }
 
+async set_repeat(state) {
+        var headers = {
+            'Authorization': `Bearer ${this.auth}`,
+            'Content-Type': 'application/json'
+        };
+        await this.getStatus()
+        var options = {
+            url: 'https://api.spotify.com/v1/me/player/repeat?state'+state,
+            method: 'PUT',
+            headers: headers,
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+            }
+        }
+
+        request(options, callback);
+
+    }
+
+async set_shuffle(state) {
+        var headers = {
+            'Authorization': `Bearer ${this.auth}`,
+            'Content-Type': 'application/json'
+        };
+        await this.getStatus()
+        var options = {
+            url: 'https://api.spotify.com/v1/me/player/shuffle?state'+state,
+            method: 'PUT',
+            headers: headers,
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+            }
+        }
+
+        request(options, callback);
+
+    }
+
+
+async set_volume(percent) {
+        var headers = {
+            'Authorization': `Bearer ${this.auth}`,
+            'Content-Type': 'application/json'            
+        };
+        await this.getStatus()
+        var options = {
+            url: 'https://api.spotify.com/v1/me/player/volume?volume_percent='+percent,
+            method: 'PUT',
+            headers: headers,
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                console.log(body);
+            }
+        }
+
+        request(options, callback);
+
+    }
+    async set_position(position_ms) {
+        console.log(position_ms)
+        var headers = {
+            'Authorization': `Bearer ${this.auth}`,
+            'Content-Type': 'application/json'            
+        };
+        await this.getStatus()
+        var options = {
+            url: 'https://api.spotify.com/v1/me/player/seek?position_ms='+ Math.floor(position_ms),
+            method: 'PUT',
+            headers: headers,
+        };
+
+        function callback(error, response, body) {
+        if (!error && response.statusCode == 200) {
+                console.log(body);
+            }
+        }
+
+        request(options, callback);
+
+    }
 
     async transfer_and_play(target_device) {
         var headers = {
