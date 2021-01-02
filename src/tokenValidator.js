@@ -36,7 +36,7 @@ class tokenValidator {
     }, (res) => {
       let body = ''
       res.on('data', (data) => { body += data})
-      res.on('end', () => { var result = JSON.parse(body)
+      res.on('end', () => { if (body) var result = JSON.parse(body)
       resolve(result)
        })
       if (res.statusCode != '401' ) {
