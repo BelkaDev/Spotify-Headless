@@ -1,9 +1,9 @@
 ## Spotify-Headless
-CLI automation script using [puppeteer](https://github.com/puppeteer/puppeteer) to intercept your validated OAuth Spotify token (alongside of the session cookies), then reinject them to imitate an authorized, User-like traffic.
+A CLI tool using [puppeteer](https://github.com/puppeteer/puppeteer) to intercept your own validated spotify OAuth token alongside of the session cookies, then reinject them to mimic an authorized, user-like traffic.
 #### How it works
-1. Establish a session by authenticating to Spotify within a headless browser. (Puppeteer)<br><del>2. Generate a valid JWT and use it until expiration.</del> <br> <del>3. Start over.</strike> <br>
+1. Establish a session by authenticating to Spotify within a headless browser. (Puppeteer)
 2. Export the session cookies and store them locally, specifically the refresh token that will refresh the JWT every time it expires. (valid for one year)
-3. The access token allows you to perform special actions on behalf of a user, it has a lifespan of half an hour.
+3. The access token allows you to perform special actions on behalf of a user.
 
 #### Installation and configuration
 ```bash
@@ -30,7 +30,7 @@ The sole purpose is to combine aliases into automated and complex tasks, this ca
 
 
 #### Notes:
-* `play.js` reads input from stdin only
+* `play.js` reads input from stdin only, it works in pair with the search command.
 * `transfer.js` takes `phone/mobile`,`computer/pc`,`browser` as parameters, if the suggested device isn't opened, it sends the signal to the actual active device.
 * `search.js` will lookup for tracks by default, unlike other items (albums,playlists etc..), tracks can be stacked and enqueued at once, more details [here](https://developer.spotify.com/documentation/web-api/reference/player/start-a-users-playback/). It takes `album`,`artist`,`playlist` as arguments.
 * snippets used in the examples can be found [here](https://github.com/BelkaDev/dotfiles/blob/master/.zshrc)
