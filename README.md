@@ -36,5 +36,6 @@ The sole purpose is to combine aliases into automated and complex tasks, this ca
 * snippets used in the examples can be found [here](https://github.com/BelkaDev/dotfiles/blob/master/.zshrc)
  
 #### Todo:
-* Function to create User playlists on the plateform.
-* Catch random/annoying error messages.
+* Allow creating online playlists.
+* Refactor/clean code
+* <strike> Catch random/annoying error messages. </strike>
